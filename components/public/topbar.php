@@ -5,7 +5,7 @@ $emp = "employees";
 ?>
 
 <topbar>
-    <a href="../">home</a>
+    <a href="index.php">home</a>
     <a href="../../pages/public/<?= $pro ?>.php"><?= $pro ?></a>
     <a href="../../pages/public/<?= $sup ?>.php"><?= $sup ?></a>
     <a href="../../pages/public/<?= $emp ?>.php"><?= $emp ?></a>

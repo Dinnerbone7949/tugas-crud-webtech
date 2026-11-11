@@ -22,3 +22,17 @@ function getProduct($id){
   }
   return $product;
 }
+
+function isProductCodeTaken($ProductNumber, $ignorproductId){
+  global $pdo;
+  $productId = intval($ignorproductId);
+  $query = "select count(product_id) from products where product_code = :product_code && product_id != :id";
+  $stmt = $pdo->prepare($query);
+  $stmt->execute([
+    "product_code"=> $ProductNumber,
+    "id"=> $productId
+    ]);
+
+  $isProductCodeTaken = $stmt->fetchColumn() > 0;
+  return $isProductCodeTaken;
+}

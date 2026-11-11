@@ -3,7 +3,7 @@ require_once __DIR__ . "/../repositories/products.php";
 
 function getProductRequest($request){
     return[
-        'product_id' => trim(htmlspecialchars($request["id"])),
+        'id' => trim(htmlspecialchars($request["id"])),
         'product_code' => trim(htmlspecialchars($request["product_code"])),
         'product_name' => trim(htmlspecialchars($request["product_name"])),
         'category' => trim(htmlspecialchars($request["category"])),
@@ -25,6 +25,12 @@ function validateProduct($request, $ignoreProductId = 0){
     }
     elseif(mb_strlen($request['product_code']) > 10){
         $errors['product_code'] = "kode produk tidak boleh di atas 10 karakter";
+    }
+    elseif(isProductCodeTaken($request['product_code'], $ignoreProductId)){
+        $errors['product_code'] = "Kode produk sudah terdaftar sebelumnya";
+    }
+    elseif($request['product_code'] < 0){
+        $errors['product_code'] = "kode produk wajib diisi dengan angka positif";
     }
 
     if($request['product_name'] == ''){

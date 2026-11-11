@@ -23,6 +23,12 @@ function validateEmployee($request, $ignoreEmployeeId = 0){
     elseif(isEmployeeNumberTaken($request['employee_number'], $ignoreEmployeeId)){
         $errors['employee_number'] = "nomor karyawan sudah terdaftar sebelumnya";
     }
+    elseif(!is_int(intval($request['employee_number']))){
+        $errors['employee_number'] = "nomor karyawan wajib diisi dengan angka";
+    }
+    elseif($request['employee_number'] < 0){
+        $errors['employee_number'] = "nomor karyawan wajib diisi dengan angka positif";
+    }
 
     if($request['full_name'] == ''){
         $errors['full_name'] = "nama panjang perlu diisi";

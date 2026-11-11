@@ -8,7 +8,7 @@ $emp = "employees";
 ?>
 
 <topbar>
-    <a href="../">home</a>
+    <a href="../..">home</a>
     <a href="../../pages/<?= $pro ?>/index.php"><?= $pro ?></a>
     <a href="../../pages/<?= $sup ?>/index.php"><?= $sup ?></a>
     <a href="../../pages/<?= $emp ?>/index.php"><?= $emp ?></a>

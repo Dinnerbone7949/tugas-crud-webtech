@@ -19,6 +19,7 @@
     ?>
     <main>
         <form action="../../actions/products/store.php" method="POST">
+            <input type="hidden" name="id">
             <div class="form-div">
                 <label for="product_code">kode produk</label>
                 <input value="<?= $old['product_code'] ?? '' ?>" type="text" id="product_code" name="product_code" placeholder="001"><br>
