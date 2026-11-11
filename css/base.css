@@ -1,0 +1,42 @@
+.button {
+    display: flexbox;
+    width: 120px;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+}
+
+main a {
+    text-decoration: none;
+    color: black;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0px;
+}
+
+#btn-1 {
+    background-color: #9fff67;
+}
+
+#btn-2 {
+    background-color: #6f7dff;
+}
+
+#btn-3 {
+    background-color: #67e8ff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
